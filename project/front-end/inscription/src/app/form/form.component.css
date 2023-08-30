@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+.container{
+    display: block;
+    background-color: rgb(142, 255, 234);
+    padding-right: 120px;
+    padding-left: 120px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    box-sizing:border-box;
+    border-radius:20px ;
+    direction: rtl;
+    text-align: right;
+   
+  }
+  body{
+    font-size: 20px;
+ 
+    font-family: 'Varela Round', sans-serif;
+  
+
+  }
+  .na-container{
+    display: flex;
+    margin-right: 10px;
+   
+  }
+    .na-container > div{
+        flex: 1;
+        margin-right: 30px;
+
+
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+   
+        margin-top: 15px;
+    }
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 40px;
+    margin-top: 15px;
+}
+ #add-employee-form{
+    background-color: rgb(18, 114, 45);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+#cancel-add-employee{
+  background-color: rgb(255, 97, 97);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 40px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-buttons {
+  display: flex;
+
+
+  margin-top: 15px;
+  text-align: left; /* Align buttons to the left */
+}

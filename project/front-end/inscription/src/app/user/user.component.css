@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+h1{
+  display:flex;
+  color: #af87ff;
+}
+body {
+  background-color: #e8e8e8;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+/* Reset default margin and padding */
+main{
+  display: flex;
+  direction: rtl;
+  text-align: right;
+}
+
+
+.nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Section styles */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sidebar styles */
+#sidebar {
+  display: block;
+  width: 250px;
+  background-color: #e8e8e8;
+  padding: 20px;
+  
+}
+#alls{
+  display: flex;
+width: 100%;
+}
+#sidebar header a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+#sidebar .nav {
+  list-style: none;
+  padding: 0;
+}
+aside{
+  display: flex;
+  padding: 20px;
+  background-color: #e8e8e8;
+  
+
+
+
+}
+#sidebar .nav li {
+  margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#sidebar .nav li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/* Content styles */
+.content {
+  flex: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.content .card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.content .card .card-header {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 5px;
+}
+
+/* Form styles */
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+width: 100%;
+  background-color: #f2f2f2;
+
+
+}
+.col-sm-4{
+  display: flex;
+  flex-direction: column;
+width: 100%;
+padding-top: 10px;
+padding-bottom: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form .form-group {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} 
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons styles */
+.buttonss {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonss button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Colors for buttons */
+.btn-success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-bad {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sidebar {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+label{
+  color: rgb(63, 63, 63);
+}
+

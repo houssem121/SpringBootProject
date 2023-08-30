@@ -1,0 +1,27 @@
+section{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 240px;
+    
+    margin-top: 15px;
+    direction: rtl;
+    text-align: right;
+}
+
+.container.col-lg-6 {
+    background-color: #aeaeff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.google{
+ 
+    color: white;
+    border-radius: 10px;
+   
+    margin-top: 15px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+ 
+}

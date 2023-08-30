@@ -1,0 +1,67 @@
+<body>
+  <main>
+    <section>
+      <div class="pre-container">
+        <div class="container">
+       
+          <form [formGroup]="details" (ngSubmit)="Onsubmit()">
+
+            <div class="na-container">
+              <div class="form-group">
+                <label for="firstname">
+                  الاسم الأول:
+                </label>
+                <input type="text" id="firstname" class="form-control" formControlName="firstname" required>
+                <div *ngIf="firstname?.invalid && !firstname?.hasError('required')" class="error-message">
+                  يجب أن يحتوي الاسم الأول على <strong>{{ firstname?.errors?.['minlength'].requiredLength }}</strong> حرفًا على الأقل
+                </div>
+                <div *ngIf="firstname?.hasError('required')" class="error-message">
+                  الاسم الأول مطلوب
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="lastname">
+                  الاسم الأخير:
+                </label>
+                <input type="text" id="lastname" class="form-control" formControlName="lastname" required>
+                <div *ngIf="lastname?.invalid && !lastname?.hasError('required')" class="error-message">
+                  يجب أن يحتوي الاسم الأخير على <strong>{{ lastname?.errors?.['minlength'].requiredLength }}</strong> حرفًا على الأقل
+                </div>
+                <div *ngIf="lastname?.hasError('required')" class="error-message">
+                  الاسم الأخير مطلوب
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>اختر تاريخًا</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="bdate">
+                <mat-hint>شهر/يوم/سنة</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>مكان الميلاد</mat-label>
+                <input matInput formControlName="placeOfBirth" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let place of filteredPlaces | async" [value]="place">
+                    {{ place }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+            <div class="form-buttons">
+            <button [disabled]="!details.valid" class="btn btn-success" type="submit" id="add-employee-form">تأكيد</button>
+            <button type="button" class="btn btn-failure" type="reset" id="cancel-add-employee">إلغاء</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>

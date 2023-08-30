@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="#" routerLink="/home" class="nav-item nav-link">الرئيسية</a>
+			<a href="#" class="nav-item nav-link">حول</a>
+			<a href="#" class="nav-item nav-link">اتصل بنا</a>
+		</div>
+
+		<div class="navbar-nav ml-auto action-buttons">
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4" routerLink="/admin" *ngIf="!isLoggedIn">تسجيل الدخول</a>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" *ngIf="isLoggedIn" routerLink="/user">
+					<img src="assets\users.png" alt="user" class="avatar-img">
+				</a>
+			</div>
+
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn" routerLink="/inscription" *ngIf="!isLoggedIn">التسجيل</a>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn" routerLink="/inscription" *ngIf="isLoggedIn" (click)="signOut()">تسجيل الخروج</a>
+			</div>
+		</div>
+	</div>
+</nav>

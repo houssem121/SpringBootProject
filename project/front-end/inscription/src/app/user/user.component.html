@@ -1,0 +1,87 @@
+<body>
+  <main>
+    <aside>
+      <div id="sidebar">
+        <header>
+          <a>اسم المستخدم</a>
+        </header>
+        <ul class="nav">
+          <li>
+            <a href="" routerLink="/user" (click)="toggleDetails()">
+              <i class="zmdi zmdi-view-dashboard"></i>تفاصيل المستخدم
+            </a>
+          </li>
+       
+          <li>
+            <a href="#" routerLink="/user" (click)="togglepassword()">
+              <i class="zmdi zmdi-widgets"></i>كلمة المرور
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <section>
+      <div class="content" *ngIf="showDetails">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="cardd" *ngFor="let item of user">
+              <ng-container *ngIf="item">
+                <div class="card">
+                  <div class="card-header px-3">التسجيل:</div>
+                  <ul class="list-group list-group-light list-group-small">
+                    <li class="list-group-item px-3">الاسم الأخير: {{ item.nom }}</li>
+                    <li class="list-group-item px-3">الاسم الأول: {{ item.prenom }}</li>
+                    <li class="list-group-item px-3">البريد الإلكتروني: {{ item.email }}</li>
+                    <li class="list-group-item px-3">العنوان: {{ item.adresse }}</li>
+                    <li class="list-group-item px-3">رقم الجوال: {{ item.numportable }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="content" *ngIf="showpassword">
+        <div class="row">
+          <form [formGroup]="passchange" (ngSubmit)="onsubmit()">
+            <div class="col-sm-4">
+              <h1>تغيير كلمة المرور:</h1>
+              <label>كلمة المرور الحالية:</label>
+              <div class="form-group pass_show">
+                <input type="password" formControlName="oldpassword" class="form-control" placeholder="كلمة المرور الحالية">
+              </div>
+              <label>كلمة المرور الجديدة:</label>
+              <div class="form-group pass_show">
+                <input type="password" formControlName="newpassword" class="form-control" placeholder="كلمة المرور الجديدة">
+                <div *ngIf="newpassword?.invalid && !newpassword?.hasError('required')" class="error-message">
+                  يجب أن تحتوي كلمة المرور على <strong>رقم واحد</strong> و<strong>حرف كبير واحد</strong> و
+                  <strong>حروف صغيرة</strong>، وعلى الأقل <strong>8</strong> أحرف أو أكثر.
+                </div>
+                <div *ngIf="newpassword?.hasError('minlength') && !newpassword?.hasError('required')" class="error-message">
+                  يجب أن تحتوي كلمة المرور على <strong>{{ newpassword?.errors?.['minlength'].requiredLength}}</strong> حرفًا على الأقل
+                </div>
+                <div *ngIf="newpassword?.hasError('required')" class="error-message">
+                  كلمة المرور مطلوبة
+                </div>
+              </div>
+              <label>تأكيد كلمة المرور:</label>
+              <div class="form-group pass_show">
+                <input type="password" formControlName="cnewpassword" class="form-control" placeholder="تأكيد كلمة المرور">
+                <div *ngIf="cnewpassword?.invalid && cnewpassword?.hasError('passwordMismatch')" class="error-message">
+                  كلمة المرور غير متطابقة
+                </div>
+                <div *ngIf="cnewpassword?.hasError('required')" class="error-message">
+                  تأكيد كلمة المرور مطلوب
+                </div>
+              </div>
+              <div class="buttonss">
+                <button class="btn btn-success" type="submit" id="cancel-add-employee">حفظ</button>
+                <button class="btn btn-bad" type="reset" id="cancel-add-employeee">إلغاء</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
